@@ -23,6 +23,12 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(
+	cors({
+		origin:"https://smart-frontend-inky.vercel.app",
+		credentials:true,
+	})
+)
+app.use(
 	fileUpload({
 		useTempFiles:true,
 		tempFileDir:"/tmp",
